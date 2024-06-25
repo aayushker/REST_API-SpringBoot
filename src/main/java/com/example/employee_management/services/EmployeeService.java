@@ -10,4 +10,6 @@ public interface EmployeeService {
     public Employee addEmployee(Employee employee);
     public Employee deleteEmployee(int employeeId);
     public Employee updateEmployee(Employee employee);
+
+    Employee updateEmployee(int employeeId, Employee updatedEmployeeData);
 }

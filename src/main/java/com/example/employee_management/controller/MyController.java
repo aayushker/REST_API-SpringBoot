@@ -38,4 +38,9 @@ public class MyController {
     public Employee deleteEmployee(@PathVariable int employeeId){
         return this.employeeService.deleteEmployee(employeeId);
     }
+
+    @PutMapping("/employees/{employeeId}")
+    public Employee updateEmployee(@PathVariable int employeeId, @RequestBody Employee employee){
+        return this.employeeService.updateEmployee(employeeId, employee);
+    }
 }

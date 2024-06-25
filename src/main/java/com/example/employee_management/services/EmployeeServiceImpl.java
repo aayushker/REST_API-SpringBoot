@@ -24,6 +24,9 @@ public class EmployeeServiceImpl implements EmployeeService{
 
     @Override
     public Employee getEmployeeById(int id) {
+        if (id == 0){
+            return (Employee) employees;
+        }
         Employee employee = null;
         for (Employee e : employees) {
             if (e.getEmployeeId()  == id){
@@ -57,4 +60,21 @@ public class EmployeeServiceImpl implements EmployeeService{
     public Employee updateEmployee(Employee employee) {
         return null;
     }
+
+    @Override
+    public Employee updateEmployee(int employeeId, Employee updatedEmployeeData) {
+        for (Employee e : employees) {
+            if (e.getEmployeeId() == employeeId) {
+                if (updatedEmployeeData.getName() != null) {
+                    e.setName(updatedEmployeeData.getName());
+                }
+                if (updatedEmployeeData.getDesignation() != null) {
+                    e.setDesignation(updatedEmployeeData.getDesignation());
+                }
+                return e;
+            }
+        }
+        return null;
+    }
+
 }
