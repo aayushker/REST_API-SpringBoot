@@ -3,6 +3,7 @@ import com.example.employee_management.entities.Employee;
 import org.springframework.stereotype.Service;
 
 import java.util.ArrayList;
+import java.util.Iterator;
 import java.util.List;
 
 @Service
@@ -11,9 +12,9 @@ public class EmployeeServiceImpl implements EmployeeService{
     List<Employee> employees;
     public EmployeeServiceImpl() {
         employees = new ArrayList<>();
-        employees.add(new Employee(1, "John Doe", "john@doe.com"));
-        employees.add(new Employee(2, "Mary Smith", "mary@smith.com"));
-        employees.add(new Employee(3, "Jane Doe", "jane@doe.com"));
+        employees.add(new Employee(1, "Willy Du", "Jhadu Pocha"));
+        employees.add(new Employee(2, "Mary Smith", "Mali"));
+        employees.add(new Employee(3, "Hi Jack", "Population controller"));
     }
 
     @Override
@@ -37,5 +38,23 @@ public class EmployeeServiceImpl implements EmployeeService{
     public Employee addEmployee(Employee employee) {
         employees.add(employee);
         return employee;
+    }
+
+    @Override
+    public Employee deleteEmployee(int employeeId) {
+        Iterator<Employee> iterator = employees.iterator();
+        while (iterator.hasNext()) {
+            Employee employee = iterator.next();
+            if (employee.getEmployeeId() == employeeId) {
+                iterator.remove();
+                break;
+            }
+        }
+        return null;
+    }
+
+    @Override
+    public Employee updateEmployee(Employee employee) {
+        return null;
     }
 }

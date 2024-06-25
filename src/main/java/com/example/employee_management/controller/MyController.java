@@ -33,4 +33,9 @@ public class MyController {
     public Employee addEmployee(@RequestBody Employee employee){
         return this.employeeService.addEmployee(employee);
     }
+
+    @DeleteMapping("/employees/{employeeId}")
+    public Employee deleteEmployee(@PathVariable int employeeId){
+        return this.employeeService.deleteEmployee(employeeId);
+    }
 }
