@@ -1,6 +1,12 @@
 package com.example.employee_management.entities;
 
+import jakarta.persistence.Entity;
+import jakarta.persistence.Id;
+
+@Entity
 public class Employee {
+
+    @Id
     private long employeeId;
     private String name;
     private String designation;
