@@ -69,7 +69,6 @@ public class EmployeeServiceImpl implements EmployeeService {
         // Uncomment for manual addition
         // employees.add(employee);
         // return employee;
-
         return employeesDao.save(employee);
     }
 
@@ -89,7 +88,6 @@ public class EmployeeServiceImpl implements EmployeeService {
         // if (!found) {
         //     throw new IllegalArgumentException("Employee with ID " + employeeId + " not found.");
         // }
-
         boolean found = employeesDao.existsById(employeeId);
         if (!found) {
             throw new NoSuchElementException("Employee with ID " + employeeId + " not found.");
@@ -118,7 +116,6 @@ public class EmployeeServiceImpl implements EmployeeService {
         //     }
         // }
         // return null;
-
         Optional<Employee> employeeOptional = employeesDao.findById(employeeId);
         if (employeeOptional.isPresent()) {
             Employee existingEmployee = employeeOptional.get();
@@ -133,4 +130,5 @@ public class EmployeeServiceImpl implements EmployeeService {
             throw new NoSuchElementException("Employee not found with id: " + employeeId);
         }
     }
+
 }

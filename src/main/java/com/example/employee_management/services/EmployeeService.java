@@ -13,6 +13,6 @@ public interface EmployeeService {
     public Employee addEmployee(Employee employee);
     public void deleteEmployee(int employeeId);
     public Employee updateEmployee(Employee employee);
-
     Employee updateEmployee(int employeeId, Employee updatedEmployeeData);
+
 }
